@@ -17,15 +17,15 @@ namespace Tyuiu.HoteevaEV.Sprint5.Task5.V8.Lib
                     double[] a = line.Split(" ").Select(double.Parse).ToArray();
                     for(int i = 0; i < a.Length; i++)
                     {
-                        if (a[i] < min)
+                        if (a[i] != Math.Truncate(a[i]))
                         {
-                            min = a[i];
+                            if (a[i] < min)
+                            {
+                                min = a[i];
+                            }
                         }
+                        
                     }
-                    //if(Convert.ToDouble(line.Replace(".", ",")) < min)
-                    //{
-                    //    min = Math.Round((Convert.ToDouble(line.Replace(".", ","))), 3);
-                    //}
                 }
             }
             return min;
